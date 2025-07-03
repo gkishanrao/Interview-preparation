@@ -1,7 +1,7 @@
 # Interview-preparation
 
 
-✅ 1. How do you deploy a Java app in AWS?
+# ✅ 1. How do you deploy a Java app in AWS?
 Answer:
 
 I typically use Jenkins as part of the CI/CD pipeline. The process starts by committing the latest code to AWS CodeCommit or GitHub. Jenkins picks up the code, builds the JAR file using Maven, and creates a Docker image. This image is then pushed to Amazon ECR (Elastic Container Registry). Finally, the image is pulled from ECR and deployed into Amazon EKS (Elastic Kubernetes Service). This setup enables scalable, containerized deployment in the cloud.
