@@ -60,6 +60,7 @@ I would implement a basic CRUD service using /users endpoints and connect it to 
 
 ✅ 6. How do you automate deployment using CI/CD?
 Answer:
+![image](https://github.com/user-attachments/assets/e2f5d47c-1c38-4da0-86cb-aebb87a6a791)
 
 I use a Jenkins pipeline that:
 
