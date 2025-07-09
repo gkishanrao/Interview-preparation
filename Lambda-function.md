@@ -23,12 +23,12 @@ Synchronous: Caller waits for result (e.g., API Gateway).
 Asynchronous: Lambda queues and processes later (e.g., S3, SNS).
 
 # ✅ 4. Can you invoke a Lambda function manually?
-Yes, using:
+There are many ways we can invoke a lambda function manually:
 
-AWS Console
+• AWS Console
 
-AWS CLI
+• AWS CLI
 
-SDKs
+• SDKs
 
-Test events
+• Test events
