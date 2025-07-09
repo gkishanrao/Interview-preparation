@@ -1,1 +1,7 @@
 
+# Java 5.0
+
+✅ Enhanced For Loop-Iteration over collection and arrays.
+         for (String list:arrList){
+            //do something
+         }
