@@ -3,13 +3,19 @@
 
 ✅ Enhanced For Loop-Iteration over collection and arrays.
 
-         for (String list:arrList){
-            //do something
-         }
+                  int[] numbers = {1, 2, 3, 4};
+                  for (int n : numbers) {
+                      System.out.println(n);
+                  }
+
       
 ✅  Generics- Enabled type safety in collection and methods 
-
-            Public class HashMap<K,V> extends  AbstractMap<K,V>
+Allows you to define classes, interfaces, and methods with type parameters—enabling type safety and avoiding casting.
+                  
+                  List<String> list = new ArrayList<>();
+                  list.add("Hello");
+                  // list.add(123); // Compile-time error
+                  String value = list.get(0); // No casting needed
 
             
  ✅  Enums- Provides a type-safe way to fefine contancts
