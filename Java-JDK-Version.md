@@ -56,14 +56,17 @@ Automates resource manageement in try-catch block
 # ✅ Java 8
 
        #  1. Lambda Expressions
+       
       Enables functional-style programming.
 
      Makes code more concise, especially for functional interface
 
                        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
                         names.forEach(name -> System.out.println(name));
+
                         
      # 2. Functional Interfaces
+
      
         An interface with exactly one abstract method.
 
@@ -77,7 +80,9 @@ Automates resource manageement in try-catch block
                            Greeting greet = name -> System.out.println("Hello, " + name);
                            greet.sayHello("John");
 
+
     # 3. Streams API
+
     
     Allows processing collections in a functional, declarative way.
     
@@ -100,6 +105,7 @@ You can now define concrete methods in interfaces.
                           System.out.println("Vehicle stopped");
                       }
                   }
+                  
 #5. Method References
 
 Shorter syntax for lambda expressions that just call a method.
