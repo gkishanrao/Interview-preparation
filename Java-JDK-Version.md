@@ -55,7 +55,7 @@ Automates resource manageement in try-catch block
         }
 # ✅ Java 8
 
-       #  1. Lambda Expressions
+  #  1. Lambda Expressions
        
       Enables functional-style programming.
 
@@ -65,7 +65,7 @@ Automates resource manageement in try-catch block
                         names.forEach(name -> System.out.println(name));
 
                         
-     # 2. Functional Interfaces
+  # 2. Functional Interfaces
 
      
         An interface with exactly one abstract method.
@@ -81,7 +81,7 @@ Automates resource manageement in try-catch block
                            greet.sayHello("John");
 
 
-    # 3. Streams API
+  # 3. Streams API
 
     
     Allows processing collections in a functional, declarative way.
@@ -91,7 +91,7 @@ Automates resource manageement in try-catch block
                        .filter(n -> n.startsWith("T"))
                        .map(String::toUpperCase)
                        .forEach(System.out::println);
-
+                       
 # 4. Default and Static Methods in Interfaces
 
 You can now define concrete methods in interfaces.
@@ -106,9 +106,9 @@ You can now define concrete methods in interfaces.
                       }
                   }
                   
-#5. Method References
+# 5. Method References
 
-Shorter syntax for lambda expressions that just call a method.
+  Shorter syntax for lambda expressions that just call a method.
                   
                   List<String> list = Arrays.asList("a", "b", "c");
                   list.forEach(System.out::println);
@@ -120,14 +120,14 @@ A container object that may or may not contain a non-null value. Helps avoid Nul
                   Optional<String> name = Optional.ofNullable("Java");
                   name.ifPresent(System.out::println);
                   
-#7. New Date and Time API (java.time)
+# 7. New Date and Time API (java.time)
 
                   LocalDate today = LocalDate.now();
                   LocalDate birthday = LocalDate.of(1990, Month.JULY, 20);
                   System.out.println("Today: " + today);
                   System.out.println("Birthday: " + birthday);
 
-#8. Collectors (with Streams)
+# 8. Collectors (with Streams)
 
 Used to collect the result of stream operations into a collection or a summary.
 
