@@ -31,3 +31,19 @@ Automates resource manageement in try-catch block
                   
                   new BufferedReader(new FileReader("File.txt"))){
 
+   # String in Switch:
+   Allows using String values in switch statements.
+                  
+                  switch (role) {
+                              case "admin":
+                                  System.out.println("Access granted to admin panel.");
+                                  break;
+                              case "user":
+                                  System.out.println("Access granted to user dashboard.");
+                                  break;
+                              case "guest":
+                                  System.out.println("Limited access.");
+                                  break;
+                              default:
+                                  System.out.println("Unknown role.");
+        }
