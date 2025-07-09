@@ -23,8 +23,11 @@
                   Integer obj = i;         // autoboxing
                   int j = obj;             // unboxing
 
-✅ # Java 7
+# ✅  Java 7
 # Try-With-Resources: 
 Automates resource manageement in try-catch block
-                  try(BufferedReader br=new BufferedReader(new FileReader("File.txt"))){
+
+                  try(BufferedReader br=
+                  
+                  new BufferedReader(new FileReader("File.txt"))){
 
