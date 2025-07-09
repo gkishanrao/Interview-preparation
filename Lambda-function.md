@@ -25,10 +25,10 @@ Lambda can be triggered by:
  ✅ 4. Can you invoke a Lambda function manually?
 There are many ways we can invoke a lambda function manually:
    
-   • AWS Console
-   
-   • AWS CLI
-   
-   • SDKs
-   
-   • Test events
+         • AWS Console
+         
+         • AWS CLI
+         
+         • SDKs
+         
+         • Test events
