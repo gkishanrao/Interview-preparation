@@ -98,7 +98,9 @@ Lambda can be triggered by:
 ✅19.	Can Lambda functions access a VPC?
 
                 Yes. You can configure a Lambda function to connect to private resources in a VPC, such as RDS or EC2.
+		
 ✅20.	What’s the difference between synchronous and asynchronous invocation?
+
 	•	Synchronous: Caller waits for response (e.g., API Gateway)
 	•	Asynchronous: Caller doesn’t wait (e.g., S3 events, SNS)
  
