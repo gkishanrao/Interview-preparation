@@ -136,3 +136,16 @@ Used to collect the result of stream operations into a collection or a summary.
                   String result = names.stream()
                       .collect(Collectors.joining(", "));
                   System.out.println(result);  // Output: Anna, Bob, Alice
+
+# ✅ Java 9
+
+ ✅ 1. Java Platform Module System (JPMS) – Project Jigsaw
+
+   Introduced modularity to Java, allowing better organization, security, and maintainability.
+
+    Example:
+              
+              module com.example.myapp {
+                  requires java.base;
+                  exports com.example.myapp.api;
+              }
