@@ -15,3 +15,20 @@ Lambda can be triggered by:
 • SNS/SQS
 
 • Step Functions
+
+
+ ✅ 3. What is the difference between synchronous and asynchronous invocation?
+Synchronous: Caller waits for result (e.g., API Gateway).
+
+Asynchronous: Lambda queues and processes later (e.g., S3, SNS).
+
+ ✅ 4. Can you invoke a Lambda function manually?
+Yes, using:
+
+AWS Console
+
+AWS CLI
+
+SDKs
+
+Test events
