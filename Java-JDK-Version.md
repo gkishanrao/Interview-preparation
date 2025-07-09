@@ -62,7 +62,9 @@ Automates resource manageement in try-catch block
 
                        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
                         names.forEach(name -> System.out.println(name));
+                        
      # 2. Functional Interfaces
+     
         An interface with exactly one abstract method.
 
         Examples: Runnable, Comparator, Predicate.
@@ -76,6 +78,7 @@ Automates resource manageement in try-catch block
                            greet.sayHello("John");
 
     # 3. Streams API
+    
     Allows processing collections in a functional, declarative way.
     
          List<String> names = Arrays.asList("Tom", "Jerry", "Tim");
@@ -85,6 +88,7 @@ Automates resource manageement in try-catch block
                        .forEach(System.out::println);
 
 # 4. Default and Static Methods in Interfaces
+
 You can now define concrete methods in interfaces.
 
                   interface Vehicle {
@@ -97,12 +101,14 @@ You can now define concrete methods in interfaces.
                       }
                   }
 #5. Method References
+
 Shorter syntax for lambda expressions that just call a method.
                   
                   List<String> list = Arrays.asList("a", "b", "c");
                   list.forEach(System.out::println);
 
 # 6. Optional Class
+
 A container object that may or may not contain a non-null value. Helps avoid NullPointerException.
                   
                   Optional<String> name = Optional.ofNullable("Java");
@@ -116,6 +122,7 @@ A container object that may or may not contain a non-null value. Helps avoid Nul
                   System.out.println("Birthday: " + birthday);
 
 #8. Collectors (with Streams)
+
 Used to collect the result of stream operations into a collection or a summary.
 
                   
