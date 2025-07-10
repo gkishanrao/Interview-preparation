@@ -184,7 +184,7 @@ Enhancement to Collectors.toUnmodifiableList(), toUnmodifiableSet(), and toUnmod
 # ✅ Java 17 Features with Examples
 
 1. ✅ Sealed Classes
-2. 
+   
 Restrict which classes can extend or implement a class/interface.
 
 Example:
