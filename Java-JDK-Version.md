@@ -149,3 +149,124 @@ Used to collect the result of stream operations into a collection or a summary.
                   requires java.base;
                   exports com.example.myapp.api;
               }
+
+
+✅ 2. JShell (REPL)
+A command-line tool to run Java code snippets without creating full classes — great for learning and prototyping.
+    
+    Usage:
+    
+                jshell
+                jshell> int x = 5;
+                jshell> System.out.println(x * 2);
+
+ # ✅ Java 10
+
+ ✅ 1. Local Variable Type Inference (var)
+Introduced the var keyword to declare local variables without explicitly specifying the type — type is inferred by the compiler.
+⚠️ var can only be used for local variables (not fields, method parameters, or return types).
+
+
+  Example:
+            
+            var name = "Java 10";         // Inferred as String
+            var list = List.of(1, 2, 3);  // Inferred as List<Integer>
+
+✅ 2. Unmodifiable Collectors
+Enhancement to Collectors.toUnmodifiableList(), toUnmodifiableSet(), and toUnmodifiableMap() to create immutable collections directly from streams.
+
+    Example:
+              
+              List<String> list = List.of("a", "b", "c");
+              List<String> unmodList = list.stream()
+                  .collect(Collectors.toUnmodifiableList());
+
+# ✅ Java 17 Features with Examples
+
+1. ✅ Sealed Classes
+2. 
+Restrict which classes can extend or implement a class/interface.
+
+Example:
+
+public sealed class Shape permits Circle, Square {}
+
+final class Circle extends Shape {}
+final class Square extends Shape {}
+// class Triangle extends Shape {} ❌ Not allowed unless listed
+🔹 Why use it? Enforces control over class hierarchies — useful in domain modeling.
+
+2. ✅ Pattern Matching for instanceof
+   
+Simplifies type checks and casting in instanceof.
+
+Before Java 17:
+        
+        if (obj instanceof String) {
+            String s = (String) obj;
+            System.out.println(s.toLowerCase());
+        }
+
+ With Java 17:
+            
+            
+            if (obj instanceof String s) {
+                System.out.println(s.toLowerCase());
+            }
+
+
+  3. ✅ Switch Expressions (Standardized)
+      
+Switch can now return a value and use the -> syntax and yield.
+
+Example:
+            String num = "two";
+              String result = switch (num) {
+                  case "one" -> "one";
+                  case "two" -> "two";
+                  case "three" -> "three";
+                  default -> "unknown";
+              };
+      
+              System.out.println("Result: " + result); 
+
+  4. ✅ Text Blocks Example with JSON
+
+
+public class JsonTextBlockExample {
+    public static void main(String[] args) {
+                  String json = """
+                      {
+                          "name": "Alice",
+                          "age": 30,
+                          "role": "Developer",
+                          "active": true
+                      }
+                      """;
+          
+                  System.out.println(json);
+              }
+          }
+
+
+5. ✅ Record Classes (finalized in Java 16, widely used in 17)
+
+   
+Simplifies data carrier classes (like DTOs).
+
+Example:
+
+          
+          public record Person(String name, int age) {}
+          
+          Person p = new Person("Alice", 30);
+          System.out.println(p.name()); // "Alice"
+          
+6. ✅ JEP 356: Enhanced Pseudo-Random Number Generators
+   
+Improved and pluggable random number generators.
+
+Example:
+            
+            RandomGenerator generator = RandomGeneratorFactory.of("L64X128MixRandom").create();
+            System.out.println(generator.nextInt());
