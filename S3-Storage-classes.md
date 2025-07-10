@@ -1,5 +1,4 @@
 # S3: Storage Classes
-<img width="871" height="416" alt="image" src="https://github.com/user-attachments/assets/4c4d1e55-c055-4330-aa89-70874cf0f217" />
 
 
 ✅ S3 Standard:
@@ -42,3 +41,6 @@
 
    1. Low cost Storage
    2. retrieval options- 12 hours to 48 hours
+
+<img width="871" height="416" alt="image" src="https://github.com/user-attachments/assets/4c4d1e55-c055-4330-aa89-70874cf0f217" />
+
