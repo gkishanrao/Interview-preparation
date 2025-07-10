@@ -1,4 +1,6 @@
 # S3: Storage Classes
+<img width="871" height="416" alt="image" src="https://github.com/user-attachments/assets/4c4d1e55-c055-4330-aa89-70874cf0f217" />
+
 
 ✅ S3 Standard:
 
