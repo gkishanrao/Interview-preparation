@@ -257,7 +257,9 @@ Restrict which classes can extend or implement a class/interface.
 
 Example:
 
-public sealed class Shape permits Circle, Square {}
+    public abstract sealed class Shape permits Circle, Square {
+      public abstract double area();
+    }
 
 final class Circle extends Shape {}
 final class Square extends Shape {}
@@ -297,6 +299,23 @@ Example:
               };
       
               System.out.println("Result: " + result); 
+
+                
+                public class PatternMatchSwitchExample {
+                    public static void main(String[] args) {
+                        Object input = 42;
+                
+                        String result = switch (input) {
+                            case Integer i -> "It's an Integer: " + (i * 2);
+                            case String s  -> "It's a String: " + s.toUpperCase();
+                            case null      -> "Input is null";
+                            default        -> "Unknown type";
+                        };
+                
+                        System.out.println(result);
+                    }
+                }
+
 
   4. ✅ Text Blocks Example with JSON
 
