@@ -315,7 +315,12 @@ Example:
                         System.out.println(result);
                     }
                 }
-
+ # Why use Pattern Matching for switch?
+           More readable & concise
+           No more manual casting
+           Safe (Prevents classCostException)
+           Easier to extend in the future
+ 
 
   4. ✅ Text Blocks Example with JSON
 
