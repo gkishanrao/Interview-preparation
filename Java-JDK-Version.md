@@ -181,6 +181,74 @@ Enhancement to Collectors.toUnmodifiableList(), toUnmodifiableSet(), and toUnmod
               List<String> unmodList = list.stream()
                   .collect(Collectors.toUnmodifiableList());
 
+
+# ✅ Top Java 11 Features with Examples
+
+         Java 11 introduced several new utility methods in the String class:
+
+              public class StringExample {
+                public static void main(String[] args) {
+                    String s = "  Hello Java 11  ";
+            
+                    System.out.println(s.isBlank());       // false
+                    System.out.println("  \n\t".isBlank()); // true
+            
+                    System.out.println(s.strip());         // "Hello Java 11" (removes leading/trailing whitespace)
+                    System.out.println(s.repeat(2));       // Repeats the string twice
+                    s.lines().forEach(System.out::println); // Splits string into lines
+                }
+            }
+
+2. ✅ Local Variable Type Inference in Lambda Parameters
+ 
+ You can now use var in lambda parameters.
+          
+           List<String> names = List.of("Alice", "Bob", "Charlie");
+          
+          names.forEach((var name) -> System.out.println(name.toUpperCase()));
+
+ 3. ✅ HTTP Client API (Standard)
+          The new HTTP Client (previewed in Java 9) is now fully supported.
+
+                  
+                  import java.net.URI;
+                  import java.net.http.HttpClient;
+                  import java.net.http.HttpRequest;
+                  import java.net.http.HttpResponse;
+                  
+                  public class HttpExample {
+                      public static void main(String[] args) throws Exception {
+                          HttpClient client = HttpClient.newHttpClient();
+                          HttpRequest request = HttpRequest.newBuilder()
+                                  .uri(URI.create("https://api.github.com"))
+                                  .build();
+                  
+                          HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+                  
+                          System.out.println(response.statusCode());
+                          System.out.println(response.body());
+                      }
+                  }
+
+4. ✅ File readString() and writeString() Methods
+
+          Simplified reading and writing text files.
+   
+            import java.nio.file.Files;
+            import java.nio.file.Path;
+            
+            public class FileExample {
+                public static void main(String[] args) throws Exception {
+                    Path path = Path.of("test.txt");
+            
+                    Files.writeString(path, "Hello Java 11");
+                    String content = Files.readString(path);
+                    System.out.println(content);
+                }
+            }
+
+                
+
 # ✅ Java 17 Features with Examples
 
 1. ✅ Sealed Classes
