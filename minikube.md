@@ -107,6 +107,7 @@ Service Types in Kubernetes
 # Ingress
 
 minikube addons enable ingress
+<img width="1102" height="650" alt="image" src="https://github.com/user-attachments/assets/d10caad8-4e94-4158-93f4-0359ebd08bed" />
 
 
 
