@@ -7,7 +7,7 @@ https://github.com/kubernetes/minikube/releases/tag/v1.36.0
 Env: C:\Users\gkish\Minikube
 
 
-cmd> minikube start –driver=docker
+cmd> minikube start –driver=docker   or minikube start –driver=hyperkit
 
       > minikube status
 
@@ -104,6 +104,9 @@ Service Types in Kubernetes
             ClusterIp
             LoadBalancer
 
+# Ingress
+
+minikube addons enable ingress
 
 
 
