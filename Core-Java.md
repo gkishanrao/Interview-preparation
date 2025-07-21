@@ -145,3 +145,44 @@ An unchecked error (extends Error) that happens when the class was present at co
                         | `NoClassDefFoundError`   | Unchecked Error   | JVM **tries to use a class that was compiled in**, but **not available at runtime**     | Ensure class exists in runtime environment |
                         
 
+✅ Example: One-to-Many — Employer ↔ Address
+
+  💬 Meaning:
+One Employer has many Addresses.
+
+Each Address belongs to one Employer.
+
+🗄️ Required Tables
+                        
+                        Table	Columns
+                        employer	id (PK), name, ...
+                        address	id (PK), street, city, employer_id (FK)
+
+
+                        @Entity
+                        public class Employer {
+                            @Id @GeneratedValue
+                            private Long id;
+                            private String name;
+                        
+                            @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL)
+                            private List<Address> addresses = new ArrayList<>();
+                        }
+
+
+                        @Entity
+                        public class Address {
+                            @Id @GeneratedValue
+                            private Long id;
+                            private String street;
+                            private String city;
+                        
+                            @ManyToOne
+                            @JoinColumn(name = "employer_id") // foreign key in address table
+                            private Employer employer;
+                        }
+
+✅ Summary
+            Concept	Tables Needed
+            One-to-Many	✅ Two tables (with FK on the "many" side)
+            Many-to-Many	❗ Three tables (a join table is needed)
