@@ -159,7 +159,7 @@ Each Address belongs to one Employer.
                         address	id (PK), street, city, employer_id (FK)
 
 
-                        @Entity
+# @Entity
                         public class Employer {
                             @Id @GeneratedValue
                             private Long id;
@@ -170,7 +170,7 @@ Each Address belongs to one Employer.
                         }
 
 
-                        @Entity
+# @Entity
                         public class Address {
                             @Id @GeneratedValue
                             private Long id;
@@ -183,6 +183,8 @@ Each Address belongs to one Employer.
                         }
 
 ✅ Summary
-            Concept	Tables Needed
+#  Concept	Tables Needed
+            
             One-to-Many	✅ Two tables (with FK on the "many" side)
+            
             Many-to-Many	❗ Three tables (a join table is needed)
