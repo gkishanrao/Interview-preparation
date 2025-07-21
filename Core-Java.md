@@ -107,3 +107,41 @@ To construct complex objects step by step, especially when objects have many opt
                         // Output: 4 room(s), Garage: true, Pool: true
                     }
                 }
+
+# 🔍 1. ClassNotFoundException
+
+A checked exception that occurs when you try to load a class manually by name, and it isn't found on the classpath.
+                                    
+                                    public class CNFDemo {
+                                        public static void main(String[] args) {
+                                            try {
+                                                Class.forName("com.unknown.FakeClass"); // Class doesn't exist
+                                            } catch (ClassNotFoundException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    }
+
+#🔥 2. NoClassDefFoundError
+
+An unchecked error (extends Error) that happens when the class was present at compile time, but missing at runtime.
+                                    // File: Main.java
+                                    public class Main {
+                                        public static void main(String[] args) {
+                                            Helper.sayHello();  // Class was compiled, but now missing at runtime
+                                        }
+                                    }
+                                    
+                                    // File: Helper.java
+                                    public class Helper {
+                                        public static void sayHello() {
+                                            System.out.println("Hello from Helper!");
+                                        }
+                                    }
+
+                        | Error                    | Type              | When it happens                                                                         | How to fix                                 |
+                        | ------------------------ | ----------------- | --------------------------------------------------------------------------------------- | ------------------------------------------ |
+                        | `ClassNotFoundException` | Checked Exception | You **explicitly load a class** (e.g., `Class.forName`) that doesn’t exist on classpath | Add the correct class/JAR                  |
+                        | `NoClassDefFoundError`   | Unchecked Error   | JVM **tries to use a class that was compiled in**, but **not available at runtime**     | Ensure class exists in runtime environment |
+                        
+
