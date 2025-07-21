@@ -112,4 +112,5 @@ minikube addons enable ingress
 
 <img width="766" height="735" alt="image" src="https://github.com/user-attachments/assets/476cf904-27c1-492d-aa42-338b522bf101" />
 
+<img width="501" height="667" alt="image" src="https://github.com/user-attachments/assets/d1ca7ecb-6730-433a-b56d-8d594778824f" />
 
