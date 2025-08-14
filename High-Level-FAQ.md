@@ -13,3 +13,6 @@
 #  4. Can you describe your approach to application monitoring and performance tuning in AWS?
 
       We leverage Spring Boot Actuator for exposing application health and metrics, combined with ELK Stack or Prometheus + Grafana for centralized logging and visualization. On the AWS side, we use CloudWatch for metrics, logs, and custom dashboards, as well as CloudWatch Alarms for proactive alerts. We also implement X-Ray for distributed tracing in microservices and use CloudTrail for auditing AWS API calls. Performance tuning involves optimizing container resource allocation, analyzing CloudWatch metrics, and profiling application performance using AWS X-Ray and custom logs.
+# AWS LAMBDA FUNCTION
+ 
+ ✅#   1. What is AWS Lambda?
