@@ -1,6 +1,6 @@
 # ✅ 1. Explain your experience developing and deploying applications on AWS.
 
- We developed a microservices-based, event-driven architecture. The CI/CD pipeline used AWS CodeBuild to build Docker images, which were pushed to Amazon ECR. We then deployed them to Amazon ECS using Fargate, allowing for serverless container orchestration without managing EC2 infrastructure. This approach provided scalability, reduced operational overhead, and improved deployment speed.
+We developed a microservices-based, event-driven architecture. The CI/CD pipeline used AWS CodeBuild to build Docker images, which were pushed to Amazon ECR. We then deployed them to Amazon ECS using Fargate, allowing for serverless container orchestration without managing EC2 infrastructure. This approach provided scalability, reduced operational overhead, and improved deployment speed.
 
  #  ✅ 2. Which AWS services have you used for building APIs? Walk through the architecture.
 
