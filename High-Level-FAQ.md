@@ -2,17 +2,15 @@
 
       We developed a microservices-based, event-driven architecture. The CI/CD pipeline used AWS CodeBuild to build Docker images, which were pushed to Amazon ECR. We then deployed them to Amazon ECS using Fargate, allowing for serverless container orchestration without managing EC2 infrastructure. This approach provided scalability, reduced operational overhead, and improved deployment speed.
 
-# 2. Which AWS services have you used for building APIs? Walk through the architecture.
+ ✅# 2. Which AWS services have you used for building APIs? Walk through the architecture.
 
       For API development, we used Amazon API Gateway to manage and route requests. Security was implemented using JWT tokens, AWS Secrets Manager for storing credentials, AWS WAF for protection against web attacks, Security Groups for instance-level control, and Network ACLs for subnet-level control. The APIs integrated with backend microservices running on ECS/Fargate, and authentication/authorization was handled using Amazon Cognito (when applicable) or custom JWT validation. Logs and metrics were sent to CloudWatch for monitoring and troubleshooting.
 
-# 3. How would you deploy a serverless application in AWS? Which services would you choose and why?
+ ✅# 3. How would you deploy a serverless application in AWS? Which services would you choose and why?
 
       For serverless applications, I would typically choose AWS Lambda combined with API Gateway for event-driven workloads that require minimal infrastructure management. However, for containerized workloads, I use ECS with Fargate as it eliminates the need to manage EC2 instances, automates scaling, and optimizes cost. It also integrates seamlessly with AWS services like CloudWatch, Secrets Manager, and ALB. Compared to EKS, ECS/Fargate requires less configuration overhead and offers simpler deployments for small to medium workloads.
 
-#  4. Can you describe your approach to application monitoring and performance tuning in AWS?
+ ✅# 4. Can you describe your approach to application monitoring and performance tuning in AWS?
 
       We leverage Spring Boot Actuator for exposing application health and metrics, combined with ELK Stack or Prometheus + Grafana for centralized logging and visualization. On the AWS side, we use CloudWatch for metrics, logs, and custom dashboards, as well as CloudWatch Alarms for proactive alerts. We also implement X-Ray for distributed tracing in microservices and use CloudTrail for auditing AWS API calls. Performance tuning involves optimizing container resource allocation, analyzing CloudWatch metrics, and profiling application performance using AWS X-Ray and custom logs.
-# AWS LAMBDA FUNCTION
  
- ✅#   1. What is AWS Lambda?
