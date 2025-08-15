@@ -38,3 +38,56 @@ I use AWS CLI for quick, ad-hoc commands or simple shell-based automation.
 Example: Running aws s3 sync to replicate data between buckets or aws ec2 stop-instances for a specific environment.
 Why: It’s lightweight, fast to execute, and perfect for one-off tasks or integrating simple steps into CI/CD pipelines.
 
+
+#  ✅ 7 Explain your experience with Terraform in AWS pipelines.
+
+I structure Terraform as reusable modules (e.g., network, eks/ecs, datastores, observability) and environment layers (envs/dev, envs/qa, envs/prod).
+State & locking: Remote backend on S3 with DynamoDB table for locking. One state per stack/env (e.g., customer360/dev/network.tfstate).
+Versioning: Pin terraform and provider versions in required_version and required_providers; module versions pinned via Git tags or registries.
+Variables & secrets: .tfvars for env inputs (kept in repo or CI variables); secrets pulled from SSM Parameter Store/Secrets Manager at apply time.
+Quality gates: terraform fmt, validate, tflint, checkov (policy/security), optional OPA/Sentinel for org guardrails.
+
+Workflow:
+init (backend + providers)
+plan (outputs uploaded as CI artifact and commented on MR/PR)
+Manual approval
+apply with role assumption (OIDC from CI to AWS IAM)
+I also schedule periodic plan against prod to detect drift and raise issues.
+
+
+#  ✅ 8 What are common challenges in Terraform deployments, and how do you handle state management?
+
+1) State management & locking
+Risk: Conflicts/corruption if two applies run at once.
+Mitigation: Remote state in S3 + DynamoDB locking; one state per stack/env; restricted apply permissions; applies only via CI.
+2) Drift (console/manual changes)
+Risk: Unexpected diffs or outages.
+Mitigation: Prohibit console changes; scheduled plan to detect drift; decide to import, reconcile in code, or ignore with lifecycle { ignore_changes = [...] } (sparingly).
+3) Breaking/implicit dependencies
+Risk: Wrong ordering; destroy/recreate critical resources.
+Mitigation: Correct references between resources; use depends_on only when necessary; split stacks (e.g., network vs apps) to reduce blast radius.
+
+4) Provider / API quirks & version upgrades
+Risk: Behavior changes on provider upgrade.
+Mitigation: Pin provider versions; test upgrades in lower env; keep a changelog; use -replace for targeted fixes.
+
+5) Imports & legacy resources
+Risk: Resources created outside Terraform.
+Mitigation: terraform import and then refactor into modules; verify with state show and a no-op plan.
+
+6) Long-lived secrets & credentials
+Risk: Leaked keys in code/vars.
+Mitigation: Use OIDC from CI to assume IAM roles; fetch secrets from SSM/Secrets Manager at runtime; never commit secrets.
+
+7) Large plans / slow applies
+
+Risk: Timeouts, throttling.
+Mitigation: Limit -parallelism, respect API limits, break monoliths into smaller stacks, cache provider plugins in CI.
+
+8) Environment separation
+Risk: Cross-env contamination.
+Mitigation: Separate backends and buckets per env (or unique state keys), dedicated workspaces/folders, and distinct IAM roles.
+
+9) Safety & reviews
+Risk: Accidental deletes.
+Mitigation: Require manual approvals, protected branches, policy-as-code (OPA/Sentinel) to block risky changes (e.g., public S3, open SGs).
