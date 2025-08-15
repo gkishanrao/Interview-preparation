@@ -91,3 +91,30 @@ Mitigation: Separate backends and buckets per env (or unique state keys), dedica
 9) Safety & reviews
 Risk: Accidental deletes.
 Mitigation: Require manual approvals, protected branches, policy-as-code (OPA/Sentinel) to block risky changes (e.g., public S3, open SGs).
+
+
+
+#  ✅ 9 Have you integrated automated testing into CI/CD pipelines? Give an example.
+
+When creating a feature or hotfix branch, I would make the necessary code changes and push the branch to the repository. This action triggers the Jenkins pipeline, which performs the following stages:
+
+Static Analysis & Security Scanning
+SonarQube scan for code quality, coverage, and maintainability.
+Fortify scan for vulnerability and security compliance checks.
+
+Build & Package
+Build the application and Docker image using a Dockerfile.
+Tag the image with the branch name or build number.
+
+Artifact Storage
+Push the built Docker image to the Amazon ECR or Google Container Registry (GCR).
+Optionally push to Nexus Repository for versioned storage.
+
+Deployment
+Pull the latest image from ECR or GCR.
+Deploy to Amazon EKS or Google Kubernetes Engine (GKE) using Argo CD for GitOps-driven, declarative deployments.
+
+Validation
+Run automated smoke tests and integration tests against the deployed environment to confirm functionality.
+
+
