@@ -16,3 +16,10 @@ For serverless applications, I would typically choose AWS Lambda combined with A
 
 We leverage Spring Boot Actuator for exposing application health and metrics, combined with ELK Stack or Prometheus + Grafana for centralized logging and visualization. On the AWS side, we use CloudWatch for metrics, logs, and custom dashboards, as well as CloudWatch Alarms for proactive alerts. We also implement X-Ray for distributed tracing in microservices and use CloudTrail for auditing AWS API calls. Performance tuning involves optimizing container resource allocation, analyzing CloudWatch metrics, and profiling application performance using AWS X-Ray and custom logs.
  
+#  ✅ 5 AWS Cloud Development & Deployment
+
+Designed and developed Spring Boot microservices with event-driven architecture using Spring Cloud, Service Registry, circuit breaker patterns, and Resilience4J for fault tolerance.
+Implemented SAGA design pattern for distributed transaction management, ensuring data consistency across microservices.
+Built CI/CD pipelines using AWS CodeBuild, integrated with Docker to create container images, and pushed them to Amazon ECR.
+Deployed services to Amazon ECS with Fargate, enabling serverless container orchestration without managing EC2 infrastructure.
+Achieved improved scalability, reduced operational overhead, and faster deployment cycles through automation and AWS-native services.
