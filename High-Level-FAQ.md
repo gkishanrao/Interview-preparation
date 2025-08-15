@@ -23,3 +23,18 @@ Implemented SAGA design pattern for distributed transaction management, ensuring
 Built CI/CD pipelines using AWS CodeBuild, integrated with Docker to create container images, and pushed them to Amazon ECR.
 Deployed services to Amazon ECS with Fargate, enabling serverless container orchestration without managing EC2 infrastructure.
 Achieved improved scalability, reduced operational overhead, and faster deployment cycles through automation and AWS-native services.
+
+
+#  ✅ 6 Programming & Scripting: Python, Bash, Shell Script
+
+When to use Python boto3
+
+I use Python boto3 when automation requires logic, conditions, loops, or integration with other systems.
+Example: A Lambda function that scans for unused EBS volumes older than 30 days, deletes them, and sends a notification to SNS.
+Why: boto3 allows programmatic control, error handling, and reusability, making it ideal for scheduled jobs, event-driven automation, and complex workflows.
+
+When to use AWS CLI
+I use AWS CLI for quick, ad-hoc commands or simple shell-based automation.
+Example: Running aws s3 sync to replicate data between buckets or aws ec2 stop-instances for a specific environment.
+Why: It’s lightweight, fast to execute, and perfect for one-off tasks or integrating simple steps into CI/CD pipelines.
+
